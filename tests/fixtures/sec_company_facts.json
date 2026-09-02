@@ -1,0 +1,44 @@
+{
+  "facts": {
+    "us-gaap": {
+      "RevenueFromContractWithCustomerExcludingAssessedTax": {
+        "units": {
+          "USD": [
+            {
+              "start": "2022-01-01",
+              "end": "2022-03-31",
+              "val": 100,
+              "fp": "Q1",
+              "form": "10-Q",
+              "frame": "CY2022Q1"
+            },
+            {
+              "start": "2022-04-01",
+              "end": "2022-06-30",
+              "val": 200,
+              "fp": "Q2",
+              "form": "10-Q",
+              "frame": "CY2022Q2"
+            },
+            {
+              "start": "2022-07-01",
+              "end": "2022-09-30",
+              "val": 300,
+              "fp": "Q3",
+              "form": "10-Q",
+              "frame": "CY2022Q3"
+            },
+            {
+              "start": "2022-01-01",
+              "end": "2022-12-31",
+              "val": 1000,
+              "fp": "FY",
+              "form": "10-K",
+              "frame": "CY2022"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

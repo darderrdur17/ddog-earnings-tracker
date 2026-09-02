@@ -1,0 +1,798 @@
+{
+  "as_of_utc": "2026-09-02T11:07:46.197836+00:00",
+  "generated_at_utc": "2026-09-02T11:07:46.197836+00:00",
+  "refresh_instructions": "Re-run `python src/analyze_ddog.py` then `npm --prefix dashboard run build` (or `npm run dev`).",
+  "npm_end": "2026-09-02",
+  "sample_quarters": 14,
+  "joined_complete_quarters": 14,
+  "analysis_start_quarter": "2023Q1",
+  "panel_quarters": [
+    "2018Q3",
+    "2019Q1",
+    "2019Q2",
+    "2019Q3",
+    "2019Q4",
+    "2020Q1",
+    "2020Q2",
+    "2020Q3",
+    "2020Q4",
+    "2021Q1",
+    "2021Q2",
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+  ],
+  "model_quarters": [
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+  ],
+  "signals": [
+    "browser_rum_downloads",
+    "dd_trace_downloads",
+    "aws_revenue",
+    "gcp_revenue",
+    "msft_ic_revenue",
+    "wiki_datadog_views",
+    "wiki_newrelic_views"
+  ],
+  "feature_cols": [
+    "browser_rum_downloads_yoy_lag1",
+    "dd_trace_downloads_yoy_lag1"
+  ],
+  "control_feature_cols": [
+    "browser_rum_downloads_yoy_lag1",
+    "dd_trace_downloads_yoy_lag1",
+    "aws_revenue_yoy_lag1",
+    "wiki_datadog_views_yoy_lag1"
+  ],
+  "lead_lag": [
+    {
+      "signal": "browser_rum_downloads_yoy",
+      "lag_quarters": 0,
+      "n": 14,
+      "corr": 0.8597670312564324
+    },
+    {
+      "signal": "browser_rum_downloads_yoy",
+      "lag_quarters": 1,
+      "n": 14,
+      "corr": 0.6937378816887458
+    },
+    {
+      "signal": "browser_rum_downloads_yoy",
+      "lag_quarters": 2,
+      "n": 14,
+      "corr": 0.4250843166629229
+    },
+    {
+      "signal": "browser_rum_downloads_yoy",
+      "lag_quarters": 3,
+      "n": 13,
+      "corr": -0.14356566029318885
+    },
+    {
+      "signal": "browser_rum_downloads_yoy",
+      "lag_quarters": 4,
+      "n": 12,
+      "corr": -0.21743969407060212
+    },
+    {
+      "signal": "dd_trace_downloads_yoy",
+      "lag_quarters": 0,
+      "n": 14,
+      "corr": 0.5495076085593207
+    },
+    {
+      "signal": "dd_trace_downloads_yoy",
+      "lag_quarters": 1,
+      "n": 14,
+      "corr": 0.22158960492142657
+    },
+    {
+      "signal": "dd_trace_downloads_yoy",
+      "lag_quarters": 2,
+      "n": 14,
+      "corr": 0.2041896871192467
+    },
+    {
+      "signal": "dd_trace_downloads_yoy",
+      "lag_quarters": 3,
+      "n": 13,
+      "corr": 0.33524358359428497
+    },
+    {
+      "signal": "dd_trace_downloads_yoy",
+      "lag_quarters": 4,
+      "n": 12,
+      "corr": 0.3622966731648385
+    },
+    {
+      "signal": "aws_revenue_yoy",
+      "lag_quarters": 0,
+      "n": 14,
+      "corr": 0.7781090744753485
+    },
+    {
+      "signal": "aws_revenue_yoy",
+      "lag_quarters": 1,
+      "n": 14,
+      "corr": 0.7834968823918836
+    },
+    {
+      "signal": "aws_revenue_yoy",
+      "lag_quarters": 2,
+      "n": 14,
+      "corr": 0.6464584979109093
+    },
+    {
+      "signal": "aws_revenue_yoy",
+      "lag_quarters": 3,
+      "n": 14,
+      "corr": 0.34018019692459234
+    },
+    {
+      "signal": "aws_revenue_yoy",
+      "lag_quarters": 4,
+      "n": 14,
+      "corr": 0.15268795561775597
+    },
+    {
+      "signal": "gcp_revenue_yoy",
+      "lag_quarters": 0,
+      "n": 12,
+      "corr": 0.9534403693460153
+    },
+    {
+      "signal": "gcp_revenue_yoy",
+      "lag_quarters": 1,
+      "n": 11,
+      "corr": 0.8953057210810146
+    },
+    {
+      "signal": "gcp_revenue_yoy",
+      "lag_quarters": 2,
+      "n": 10,
+      "corr": 0.7274590694696684
+    },
+    {
+      "signal": "gcp_revenue_yoy",
+      "lag_quarters": 3,
+      "n": 9,
+      "corr": 0.5385898261824454
+    },
+    {
+      "signal": "gcp_revenue_yoy",
+      "lag_quarters": 4,
+      "n": 8,
+      "corr": 0.40109753527732733
+    },
+    {
+      "signal": "msft_ic_revenue_yoy",
+      "lag_quarters": 0,
+      "n": 10,
+      "corr": 0.5805557631473484
+    },
+    {
+      "signal": "msft_ic_revenue_yoy",
+      "lag_quarters": 1,
+      "n": 11,
+      "corr": 0.6147731049636257
+    },
+    {
+      "signal": "msft_ic_revenue_yoy",
+      "lag_quarters": 2,
+      "n": 11,
+      "corr": 0.49788666344034416
+    },
+    {
+      "signal": "msft_ic_revenue_yoy",
+      "lag_quarters": 3,
+      "n": 10,
+      "corr": 0.05679794918420544
+    },
+    {
+      "signal": "msft_ic_revenue_yoy",
+      "lag_quarters": 4,
+      "n": 10,
+      "corr": -0.3821218638507212
+    },
+    {
+      "signal": "wiki_datadog_views_yoy",
+      "lag_quarters": 0,
+      "n": 14,
+      "corr": -0.08710003374203622
+    },
+    {
+      "signal": "wiki_datadog_views_yoy",
+      "lag_quarters": 1,
+      "n": 14,
+      "corr": 0.2972778505700983
+    },
+    {
+      "signal": "wiki_datadog_views_yoy",
+      "lag_quarters": 2,
+      "n": 14,
+      "corr": 0.7569530509601347
+    },
+    {
+      "signal": "wiki_datadog_views_yoy",
+      "lag_quarters": 3,
+      "n": 14,
+      "corr": 0.7529599410680795
+    },
+    {
+      "signal": "wiki_datadog_views_yoy",
+      "lag_quarters": 4,
+      "n": 14,
+      "corr": 0.644896643375644
+    },
+    {
+      "signal": "wiki_newrelic_views_yoy",
+      "lag_quarters": 0,
+      "n": 14,
+      "corr": -0.3537398124237381
+    },
+    {
+      "signal": "wiki_newrelic_views_yoy",
+      "lag_quarters": 1,
+      "n": 14,
+      "corr": -0.3730416106307633
+    },
+    {
+      "signal": "wiki_newrelic_views_yoy",
+      "lag_quarters": 2,
+      "n": 14,
+      "corr": -0.4595143290157035
+    },
+    {
+      "signal": "wiki_newrelic_views_yoy",
+      "lag_quarters": 3,
+      "n": 14,
+      "corr": -0.5124211569518295
+    },
+    {
+      "signal": "wiki_newrelic_views_yoy",
+      "lag_quarters": 4,
+      "n": 14,
+      "corr": -0.4333261523479306
+    }
+  ],
+  "best_leads": {
+    "aws_revenue_yoy": {
+      "lag_quarters": 1,
+      "corr": 0.7834968823918836,
+      "n": 14
+    },
+    "browser_rum_downloads_yoy": {
+      "lag_quarters": 0,
+      "corr": 0.8597670312564324,
+      "n": 14
+    },
+    "dd_trace_downloads_yoy": {
+      "lag_quarters": 0,
+      "corr": 0.5495076085593207,
+      "n": 14
+    },
+    "gcp_revenue_yoy": {
+      "lag_quarters": 0,
+      "corr": 0.9534403693460153,
+      "n": 12
+    },
+    "msft_ic_revenue_yoy": {
+      "lag_quarters": 1,
+      "corr": 0.6147731049636257,
+      "n": 11
+    },
+    "wiki_datadog_views_yoy": {
+      "lag_quarters": 2,
+      "corr": 0.7569530509601347,
+      "n": 14
+    },
+    "wiki_newrelic_views_yoy": {
+      "lag_quarters": 0,
+      "corr": -0.3537398124237381,
+      "n": 14
+    }
+  },
+  "walk_forward": {
+    "ridge": {
+      "n_test": 8,
+      "rmse": 0.033342953647606824,
+      "mape": 0.08893837658376891,
+      "directional_hit_rate": 1.0,
+      "directional_change_hit_rate": 0.125
+    },
+    "naive_persistence": {
+      "n_test": 8,
+      "rmse": 0.02111230668069576,
+      "mape": 0.05432474557725893,
+      "directional_hit_rate": 1.0,
+      "directional_change_hit_rate": 0.0
+    },
+    "ridge_recent_window": {
+      "n_test": 4,
+      "rmse": 0.04416753298286555,
+      "mape": 0.11704840357099597,
+      "directional_hit_rate": 1.0,
+      "directional_change_hit_rate": 0.0
+    },
+    "naive_persistence_recent_window": {
+      "n_test": 4,
+      "rmse": 0.023265091314016873,
+      "mape": 0.05671930023881473,
+      "directional_hit_rate": 1.0,
+      "directional_change_hit_rate": 0.0
+    },
+    "feature_cols": [
+      "browser_rum_downloads_yoy_lag1",
+      "dd_trace_downloads_yoy_lag1"
+    ],
+    "n_usable": 14,
+    "n_walk_forward": 8,
+    "recent_window_quarters": [
+      "2025Q3",
+      "2025Q4",
+      "2026Q1",
+      "2026Q2"
+    ],
+    "ridge_rum_lag1_only": {
+      "n_test": 8,
+      "rmse": 0.03259672760603928,
+      "mape": 0.08375764502429821,
+      "directional_hit_rate": 1.0,
+      "directional_change_hit_rate": 0.25
+    },
+    "ridge_npm_aws_lag1": {
+      "n_test": 8,
+      "rmse": 0.02643128248788649,
+      "mape": 0.08232886381689813,
+      "directional_hit_rate": 1.0,
+      "directional_change_hit_rate": 0.125
+    },
+    "ridge_npm_wiki_lag1": {
+      "n_test": 8,
+      "rmse": 0.032377818483906265,
+      "mape": 0.07850285918010438,
+      "directional_hit_rate": 1.0,
+      "directional_change_hit_rate": 0.25
+    },
+    "ridge_npm_aws_wiki_lag1": {
+      "n_test": 8,
+      "rmse": 0.027335441212912173,
+      "mape": 0.07695350265474589,
+      "directional_hit_rate": 1.0,
+      "directional_change_hit_rate": 0.5
+    }
+  },
+  "walk_forward_rows": [
+    {
+      "quarter": "2024Q3",
+      "actual": 0.2602203325443442,
+      "pred": 0.2682075319015997,
+      "naive_persistence": 0.26659404074902837,
+      "error": 0.007987199357255503
+    },
+    {
+      "quarter": "2024Q4",
+      "actual": 0.25112906152643344,
+      "pred": 0.2671550107525762,
+      "naive_persistence": 0.2602203325443442,
+      "error": 0.016025949226142755
+    },
+    {
+      "quarter": "2025Q1",
+      "actual": 0.24588836373809198,
+      "pred": 0.2643904405858505,
+      "naive_persistence": 0.25112906152643344,
+      "error": 0.01850207684775851
+    },
+    {
+      "quarter": "2025Q2",
+      "actual": 0.2812442369889614,
+      "pred": 0.26055647890477585,
+      "naive_persistence": 0.24588836373809198,
+      "error": -0.020687758084185548
+    },
+    {
+      "quarter": "2025Q3",
+      "actual": 0.2835224110745258,
+      "pred": 0.2676364216505084,
+      "naive_persistence": 0.2812442369889614,
+      "error": -0.01588598942401742
+    },
+    {
+      "quarter": "2025Q4",
+      "actual": 0.2920687462977498,
+      "pred": 0.27212779263030734,
+      "naive_persistence": 0.2835224110745258,
+      "error": -0.019940953667442474
+    },
+    {
+      "quarter": "2026Q1",
+      "actual": 0.32154426546806336,
+      "pred": 0.27417417948338485,
+      "naive_persistence": 0.2920687462977498,
+      "error": -0.04737008598467851
+    },
+    {
+      "quarter": "2026Q2",
+      "actual": 0.3564444336929702,
+      "pred": 0.2863790889080685,
+      "naive_persistence": 0.32154426546806336,
+      "error": -0.07006534478490167
+    }
+  ],
+  "latest_estimate": {
+    "quarter": "2026Q3",
+    "pred": 0.3058101344004549,
+    "naive_persistence": 0.3564444336929702,
+    "tracking": "behind",
+    "delta_vs_baseline": -0.050634299292515283,
+    "contributions": {
+      "browser_rum_downloads_yoy_lag1": 0.026171370664058776,
+      "dd_trace_downloads_yoy_lag1": -0.0003153616878873167
+    },
+    "has_actual": false,
+    "actual": null,
+    "last_reported_quarter": "2026Q2",
+    "signal_as_of_quarter": "2026Q2",
+    "confidence": "exploratory"
+  },
+  "intra_quarter": {
+    "quarter": "2026Q3",
+    "as_of": "2026-09-02",
+    "coverage": 0.6956521739130435,
+    "elapsed_days": 64,
+    "quarter_days": 92,
+    "window_start": "2026-07-01",
+    "window_end": "2026-09-02",
+    "prior_window_start": "2025-07-01",
+    "prior_window_end": "2025-09-02",
+    "rum_stub_yoy": 1.3908991390560232,
+    "dd_trace_stub_yoy": 1.37995845469207,
+    "rum_n_days": 64,
+    "dd_trace_n_days": 64,
+    "last_print_revenue_yoy": 0.3564444336929702,
+    "lag1_ridge_call": 0.3058101344004549,
+    "lag1_ridge_quarter": "2026Q3",
+    "last_full_quarter_rum_yoy": 1.113632248492956,
+    "last_full_quarter_dd_trace_yoy": 0.9793942140104006,
+    "compare": {
+      "rum_stub_yoy_vs_last_full_quarter_rum_yoy": 0.2772668905630673,
+      "ridge_lag1_minus_last_print": -0.050634299292515283,
+      "rum_stub_minus_ridge_lag1": 1.0850890046555683,
+      "interpretation": "Do not treat npm stub YoY as a revenue YoY forecast \u2014 scales differ. Use it as a coincident check on whether package downloads are still accelerating versus the last completed quarter."
+    },
+    "backtest": {
+      "method": "Same day-of-quarter offset as as_of, mapped onto each completed analysis quarter. Coincident vs that quarter's revenue YoY. Walk-forward adds stub features known as of the stub date to lag-1 npm.",
+      "rum_stub_vs_revenue_yoy_corr": 0.872588141929046,
+      "rum_stub_n": 14,
+      "dd_trace_stub_vs_revenue_yoy_corr": 0.4944751800278146,
+      "dd_trace_stub_n": 14,
+      "walk_forward_lag1_plus_stub": {
+        "n_test": 8,
+        "rmse": 0.025797914473850478,
+        "mape": 0.07093292623497793,
+        "directional_hit_rate": 1.0,
+        "directional_change_hit_rate": 0.25
+      },
+      "walk_forward_persistence": {
+        "n_test": 8,
+        "rmse": 0.02111230668069576,
+        "mape": 0.05432474557725893,
+        "directional_hit_rate": 1.0,
+        "directional_change_hit_rate": 0.0
+      },
+      "stub_walk_forward_beats_persistence": false,
+      "rows": [
+        {
+          "quarter": "2023Q1",
+          "rum_stub_yoy": 0.758493566365438,
+          "dd_trace_stub_yoy": 0.5028795843685574,
+          "revenue_yoy": 0.32692614935404785
+        },
+        {
+          "quarter": "2023Q2",
+          "rum_stub_yoy": 0.4543684291726813,
+          "dd_trace_stub_yoy": 0.5072726662745661,
+          "revenue_yoy": 0.2544012133806737
+        },
+        {
+          "quarter": "2023Q3",
+          "rum_stub_yoy": 0.40902013982401386,
+          "dd_trace_stub_yoy": 0.6359407822757828,
+          "revenue_yoy": 0.2542831813402424
+        },
+        {
+          "quarter": "2023Q4",
+          "rum_stub_yoy": 0.1253371392251421,
+          "dd_trace_stub_yoy": 0.17659207464797477,
+          "revenue_yoy": 0.2561786454594066
+        },
+        {
+          "quarter": "2024Q1",
+          "rum_stub_yoy": 0.16319220004575752,
+          "dd_trace_stub_yoy": 0.14706707333852753,
+          "revenue_yoy": 0.26891267432542953
+        },
+        {
+          "quarter": "2024Q2",
+          "rum_stub_yoy": 0.11752693889247579,
+          "dd_trace_stub_yoy": 0.1218551349672714,
+          "revenue_yoy": 0.26659404074902837
+        },
+        {
+          "quarter": "2024Q3",
+          "rum_stub_yoy": 0.11748975190762212,
+          "dd_trace_stub_yoy": 0.05175868578771836,
+          "revenue_yoy": 0.2602203325443442
+        },
+        {
+          "quarter": "2024Q4",
+          "rum_stub_yoy": 0.35443408007190147,
+          "dd_trace_stub_yoy": 0.5158393396868608,
+          "revenue_yoy": 0.25112906152643344
+        },
+        {
+          "quarter": "2025Q1",
+          "rum_stub_yoy": 0.31647093131014437,
+          "dd_trace_stub_yoy": 0.5746876377880841,
+          "revenue_yoy": 0.24588836373809198
+        },
+        {
+          "quarter": "2025Q2",
+          "rum_stub_yoy": 0.4883565305737523,
+          "dd_trace_stub_yoy": 0.5410465982131092,
+          "revenue_yoy": 0.2812442369889614
+        },
+        {
+          "quarter": "2025Q3",
+          "rum_stub_yoy": 0.5795929758706224,
+          "dd_trace_stub_yoy": 0.44046724120326686,
+          "revenue_yoy": 0.2835224110745258
+        },
+        {
+          "quarter": "2025Q4",
+          "rum_stub_yoy": 0.5638221998341781,
+          "dd_trace_stub_yoy": 0.34397367956423297,
+          "revenue_yoy": 0.2920687462977498
+        },
+        {
+          "quarter": "2026Q1",
+          "rum_stub_yoy": 0.8638057028726878,
+          "dd_trace_stub_yoy": 0.5548698279850197,
+          "revenue_yoy": 0.32154426546806336
+        },
+        {
+          "quarter": "2026Q2",
+          "rum_stub_yoy": 1.07157392780858,
+          "dd_trace_stub_yoy": 0.9182277166335098,
+          "revenue_yoy": 0.3564444336929702
+        }
+      ]
+    },
+    "management_guidance": {
+      "quarter": "2026Q3",
+      "revenue_low": 1135000000.0,
+      "revenue_high": 1145000000.0,
+      "as_of": "2026-08-06",
+      "filing": "8-K Exhibit 99.1, 6 August 2026",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026053829/ex-991x20260630x8k.htm",
+      "note": "Management outlook from the Q2 2026 earnings 8-K. Not a Street consensus number. No Yahoo/FactSet scrape.",
+      "available": true,
+      "prior_year_revenue": 885651000.0,
+      "implied_yoy_low": 0.2815431812305298,
+      "implied_yoy_high": 0.2928343105805786,
+      "implied_yoy_mid": 0.2871887459055542
+    },
+    "framing": "Stub is a coincident high-frequency npm update (same-calendar-day window vs a year ago), not a leading indicator. Lag-1 ridge is the validated model call; the stub is not trained into that call. Backtest n is small (one stub date per completed quarter). RUM stub YoY vs eventual revenue YoY correlation is 0.87 (n=14, coincident). Walk-forward ridge using lag-1 npm plus same-quarter stub (known as of the stub date) RMSE 0.026 does not beat persistence 0.021.",
+    "label_lag1": "validated lag-1 ridge (no same-quarter npm)",
+    "label_stub": "coincident high-frequency stub (sample still small)"
+  },
+  "chart_panel": [
+    {
+      "quarter": "2023Q1",
+      "revenue": 481714000.0,
+      "revenue_yoy": 0.32692614935404785,
+      "browser_rum_downloads_yoy": 0.7366656966029235,
+      "dd_trace_downloads_yoy": 0.55619416164745,
+      "aws_revenue_yoy": 0.157963234097934,
+      "gcp_revenue_yoy": null,
+      "msft_ic_revenue_yoy": 0.15904676919846716,
+      "wiki_datadog_views_yoy": -0.06554727016738804,
+      "wiki_newrelic_views_yoy": 3.2570565839569383
+    },
+    {
+      "quarter": "2023Q2",
+      "revenue": 509460000.0,
+      "revenue_yoy": 0.2544012133806737,
+      "browser_rum_downloads_yoy": 0.47809414076738155,
+      "dd_trace_downloads_yoy": 0.5659047754170121,
+      "aws_revenue_yoy": 0.12163736764780375,
+      "gcp_revenue_yoy": 0.2796367112810707,
+      "msft_ic_revenue_yoy": null,
+      "wiki_datadog_views_yoy": -0.024500339904826696,
+      "wiki_newrelic_views_yoy": 3.3017429915832723
+    },
+    {
+      "quarter": "2023Q3",
+      "revenue": 547536000.0,
+      "revenue_yoy": 0.2542831813402424,
+      "browser_rum_downloads_yoy": 0.37735628123111487,
+      "dd_trace_downloads_yoy": 0.6043233511405388,
+      "aws_revenue_yoy": 0.1227480767358069,
+      "gcp_revenue_yoy": 0.22466511357018049,
+      "msft_ic_revenue_yoy": 0.19355473554735547,
+      "wiki_datadog_views_yoy": 0.013199855799894689,
+      "wiki_newrelic_views_yoy": 15.283051984925919
+    },
+    {
+      "quarter": "2023Q4",
+      "revenue": 589649000.0,
+      "revenue_yoy": 0.2561786454594066,
+      "browser_rum_downloads_yoy": 0.12752613107418598,
+      "dd_trace_downloads_yoy": 0.167812579016557,
+      "aws_revenue_yoy": 0.13219197305641317,
+      "gcp_revenue_yoy": null,
+      "msft_ic_revenue_yoy": 0.20327320066951837,
+      "wiki_datadog_views_yoy": 0.08710388069818675,
+      "wiki_newrelic_views_yoy": 6.314897144148896
+    },
+    {
+      "quarter": "2024Q1",
+      "revenue": 611253000.0,
+      "revenue_yoy": 0.26891267432542953,
+      "browser_rum_downloads_yoy": 0.11504494242114371,
+      "dd_trace_downloads_yoy": 0.08423725829153228,
+      "aws_revenue_yoy": 0.1724735412569074,
+      "gcp_revenue_yoy": 0.2844110544674001,
+      "msft_ic_revenue_yoy": 0.20954666908201625,
+      "wiki_datadog_views_yoy": 0.7345424107142857,
+      "wiki_newrelic_views_yoy": 5.668429655214951
+    },
+    {
+      "quarter": "2024Q2",
+      "revenue": 645279000.0,
+      "revenue_yoy": 0.26659404074902837,
+      "browser_rum_downloads_yoy": 0.09152534153283676,
+      "dd_trace_downloads_yoy": 0.09198292199172409,
+      "aws_revenue_yoy": 0.1870370370370371,
+      "gcp_revenue_yoy": 0.2883825177437429,
+      "msft_ic_revenue_yoy": null,
+      "wiki_datadog_views_yoy": 0.09360539666610923,
+      "wiki_newrelic_views_yoy": 8.12727048637323
+    },
+    {
+      "quarter": "2024Q3",
+      "revenue": 690016000.0,
+      "revenue_yoy": 0.2602203325443442,
+      "browser_rum_downloads_yoy": 0.14224640531419852,
+      "dd_trace_downloads_yoy": 0.0721953174143597,
+      "aws_revenue_yoy": 0.1905112971074201,
+      "gcp_revenue_yoy": 0.34978004993460954,
+      "msft_ic_revenue_yoy": -0.006884043035574439,
+      "wiki_datadog_views_yoy": 0.09866710457892003,
+      "wiki_newrelic_views_yoy": 0.9174875324568272
+    },
+    {
+      "quarter": "2024Q4",
+      "revenue": 737727000.0,
+      "revenue_yoy": 0.25112906152643344,
+      "browser_rum_downloads_yoy": 0.35349870835351527,
+      "dd_trace_downloads_yoy": 0.5026432543226163,
+      "aws_revenue_yoy": 0.189307552470666,
+      "gcp_revenue_yoy": 0.3005874673629243,
+      "msft_ic_revenue_yoy": -0.012982998454404981,
+      "wiki_datadog_views_yoy": 0.027929332294102327,
+      "wiki_newrelic_views_yoy": 0.2660884255634761
+    },
+    {
+      "quarter": "2025Q1",
+      "revenue": 761553000.0,
+      "revenue_yoy": 0.24588836373809198,
+      "browser_rum_downloads_yoy": 0.3448930684891254,
+      "dd_trace_downloads_yoy": 0.5521145772042106,
+      "aws_revenue_yoy": 0.1689499540679793,
+      "gcp_revenue_yoy": 0.28055149362857734,
+      "msft_ic_revenue_yoy": 0.0016100044930358326,
+      "wiki_datadog_views_yoy": 0.7682334395006918,
+      "wiki_newrelic_views_yoy": 0.4204772222235069
+    },
+    {
+      "quarter": "2025Q2",
+      "revenue": 826760000.0,
+      "revenue_yoy": 0.2812442369889614,
+      "browser_rum_downloads_yoy": 0.5199981309084167,
+      "dd_trace_downloads_yoy": 0.5450741821296854,
+      "aws_revenue_yoy": 0.17472698907956308,
+      "gcp_revenue_yoy": 0.31671015753358467,
+      "msft_ic_revenue_yoy": null,
+      "wiki_datadog_views_yoy": 2.7759736949429037,
+      "wiki_newrelic_views_yoy": 0.004906809442949633
+    },
+    {
+      "quarter": "2025Q3",
+      "revenue": 885651000.0,
+      "revenue_yoy": 0.2835224110745258,
+      "browser_rum_downloads_yoy": 0.5870768485713558,
+      "dd_trace_downloads_yoy": 0.42509522526432786,
+      "aws_revenue_yoy": 0.20231677109135937,
+      "gcp_revenue_yoy": 0.33506562142165075,
+      "msft_ic_revenue_yoy": 0.28245890752116876,
+      "wiki_datadog_views_yoy": 2.796970753823925,
+      "wiki_newrelic_views_yoy": 0.002914955391096763
+    },
+    {
+      "quarter": "2025Q4",
+      "revenue": 953194000.0,
+      "revenue_yoy": 0.2920687462977498,
+      "browser_rum_downloads_yoy": 0.5725584311544962,
+      "dd_trace_downloads_yoy": 0.3662736133420663,
+      "aws_revenue_yoy": 0.23598276940179264,
+      "gcp_revenue_yoy": 0.4775407779171894,
+      "msft_ic_revenue_yoy": 0.2882477294080801,
+      "wiki_datadog_views_yoy": 3.799873625679262,
+      "wiki_newrelic_views_yoy": -0.006660331242860473
+    },
+    {
+      "quarter": "2026Q1",
+      "revenue": 1006426000.0,
+      "revenue_yoy": 0.32154426546806336,
+      "browser_rum_downloads_yoy": 0.8984211648425222,
+      "dd_trace_downloads_yoy": 0.5893230283952056,
+      "aws_revenue_yoy": 0.2842792223323196,
+      "gcp_revenue_yoy": 0.6336052202283851,
+      "msft_ic_revenue_yoy": 0.29643751635452875,
+      "wiki_datadog_views_yoy": -0.2414395400458499,
+      "wiki_newrelic_views_yoy": -0.017893508231306754
+    },
+    {
+      "quarter": "2026Q2",
+      "revenue": 1121454000.0,
+      "revenue_yoy": 0.3564444336929702,
+      "browser_rum_downloads_yoy": 1.113632248492956,
+      "dd_trace_downloads_yoy": 0.9793942140104006,
+      "aws_revenue_yoy": 0.36792666731448187,
+      "gcp_revenue_yoy": 0.817968291250734,
+      "msft_ic_revenue_yoy": null,
+      "wiki_datadog_views_yoy": -0.762344824792931,
+      "wiki_newrelic_views_yoy": 0.007147068358223541
+    }
+  ],
+  "sources": {
+    "sec": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001561550.json",
+    "npm": "https://api.npmjs.org/downloads/range/",
+    "sec_xbrl": "https://www.sec.gov/Archives/edgar/data/",
+    "wikimedia": "https://wikimedia.org/api/rest_v1/metrics/pageviews/"
+  },
+  "caveat": "npm downloads are developer-adoption proxies, not Datadog billable usage. AWS/Google Cloud/MSFT Intelligent Cloud are official SEC XBRL segment revenues (macro controls, not DDOG accounts). Wikipedia pageviews are an official attention API, not Google Trends and not paid usage. Q4 DDOG revenue is FY minus Q1\u2013Q3. Hiring is not ingested (licensed boards only). Results are exploratory, not investment advice."
+}
