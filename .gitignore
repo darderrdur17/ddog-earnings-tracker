@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/cache/
+*.pyc
+.streamlit/
+dashboard/node_modules/
+dashboard/dist/
+.Rhistory
+.DS_Store
+outputs/*.log
+*.tsbuildinfo
