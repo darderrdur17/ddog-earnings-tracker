@@ -1,0 +1,9 @@
+.venv
+**/node_modules
+.cursor
+data/cache
+.pytest_cache
+dashboard/dist
+outputs/*.log
+ddog_takehome_submission.zip
+.git

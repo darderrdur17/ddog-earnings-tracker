@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { LAST_REVENUE, LAST_YOY, moneyM, pct, pp, summary } from "../data";
-import { useCountUp } from "../lib/format";
 import { Annotation } from "./Annotation";
 
 const tiles = [
@@ -12,11 +11,10 @@ const tiles = [
 ] as const;
 
 function RevenueTile() {
-  const n = useCountUp(LAST_REVENUE);
   return (
     <KpiShell
       label="Last reported revenue"
-      value={moneyM(n)}
+      value={moneyM(LAST_REVENUE)}
       meta={`${summary.latest_estimate.last_reported_quarter} · SEC Company Facts`}
       note="Q4 is FY residual when no Q4 frame exists. Latest print is a 10-Q frame."
     />
@@ -24,11 +22,10 @@ function RevenueTile() {
 }
 
 function YoyTile() {
-  const n = useCountUp(LAST_YOY * 100);
   return (
     <KpiShell
       label="Reported revenue YoY"
-      value={`${n.toFixed(1)}%`}
+      value={pct(LAST_YOY)}
       meta={`${summary.latest_estimate.last_reported_quarter} vs prior year`}
       note="This is the persistence baseline: last observed growth, carried forward."
     />
@@ -36,11 +33,10 @@ function YoyTile() {
 }
 
 function EstimateTile() {
-  const n = useCountUp(summary.latest_estimate.pred * 100);
   return (
     <KpiShell
       label="Lag-1 ridge (validated)"
-      value={`${n.toFixed(1)}%`}
+      value={pct(summary.latest_estimate.pred)}
       meta={`${summary.latest_estimate.quarter} · prior-quarter npm only`}
       note="Validated lag-1 model. RUM coincident correlation is stronger; that is a nowcast, not a lead."
     />

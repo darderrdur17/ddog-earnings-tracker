@@ -10,3 +10,4 @@ dashboard/dist/
 .DS_Store
 outputs/*.log
 *.tsbuildinfo
+.vercel

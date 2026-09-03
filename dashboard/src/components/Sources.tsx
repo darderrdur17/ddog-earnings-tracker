@@ -18,7 +18,12 @@ export function Sources({ asOf, npmEnd }: Props) {
             <li>Wikipedia pageviews: monthly official API</li>
             <li>Hiring: not ingested (licensed boards only)</li>
             <li>Generated: {asOf}</li>
-            <li>Refresh: re-run python src/analyze_ddog.py then rebuild</li>
+            <li>Refresh: ./scripts/analyze.sh then ./scripts/build.sh</li>
+            <li>
+              <a className="text-zinc-400 underline decoration-zinc-700 underline-offset-2 hover:text-brass-400" href="/slides.html">
+                10-slide talk (same story as the report)
+              </a>
+            </li>
           </ul>
         </div>
         <div>

@@ -381,6 +381,32 @@ def test_stub_yoy_fixed_dates_no_network():
     assert out["yoy"] == pytest.approx(1.0)
 
 
+def test_last_complete_npm_date_drops_trailing_zeros():
+    from datetime import date
+
+    rum = pd.DataFrame(
+        {
+            "date": pd.to_datetime(["2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03"]),
+            "browser_rum_downloads": [100, 90, 0, 0],
+        }
+    )
+    trace = pd.DataFrame(
+        {
+            "date": pd.to_datetime(["2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03"]),
+            "dd_trace_downloads": [80, 70, 0, 0],
+        }
+    )
+    from ddog_tracker.features import last_complete_npm_date
+
+    assert last_complete_npm_date(
+        {
+            "browser_rum_downloads": rum,
+            "dd_trace_downloads": trace,
+        },
+        fallback=date(2026, 9, 3),
+    ) == date(2026, 9, 1)
+
+
 def test_stub_window_caps_at_quarter_end():
     from datetime import date
 

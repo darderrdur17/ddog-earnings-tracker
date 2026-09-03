@@ -51,6 +51,31 @@ def sum_daily_window(
     return total, n_days
 
 
+def last_complete_npm_date(
+    dailies: dict[str, pd.DataFrame],
+    fallback: date | None = None,
+) -> date:
+    """Latest date where every npm series has a positive download count.
+
+    The npm range API often returns 0 for the current and prior calendar day
+    before counts settle. Using those zeros in the intra-quarter stub would
+    compare an incomplete current window to a complete prior-year window.
+    """
+    cap = fallback or date.today()
+    last: date | None = None
+    for col, daily in dailies.items():
+        if col not in daily.columns or daily.empty:
+            continue
+        positive = daily.loc[daily[col].fillna(0) > 0]
+        if positive.empty:
+            continue
+        series_last = pd.to_datetime(positive["date"]).dt.date.max()
+        last = series_last if last is None else min(last, series_last)
+    if last is None:
+        return cap
+    return min(last, cap)
+
+
 def stub_yoy_from_daily(
     daily: pd.DataFrame,
     value_col: str,

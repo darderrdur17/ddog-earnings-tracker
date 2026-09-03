@@ -22,13 +22,18 @@ export function Header() {
           Earnings Tracker
         </h1>
         <p className="mt-2 max-w-2xl text-[13px] leading-relaxed text-zinc-400">
-          Public npm, SEC XBRL cloud controls, and Wikimedia pageviews versus
-          reported revenue. Coincident nowcast plus a lag-1 ridge call. Not
-          billable usage, not investment advice.
+          A public-data pre-earnings read: npm as a coincident nowcast, AWS as a
+          cloud-regime control, Wikipedia as a failed attention check. The
+          lag-1 ridge is the call. Persistence still wins — that is shown on
+          purpose. Not billable usage, not investment advice.
         </p>
         <p className="mt-2 font-mono text-[11px] text-zinc-500">
-          Generated {asOfLabel}. Refresh: re-run{" "}
-          <span className="text-zinc-300">python src/analyze_ddog.py</span> then rebuild.
+          Generated {asOfLabel}. Refresh:{" "}
+          <span className="text-zinc-300">./scripts/analyze.sh</span> then{" "}
+          <span className="text-zinc-300">./scripts/build.sh</span>.{" "}
+          <a className="text-brass-400 underline decoration-zinc-700 underline-offset-2 hover:text-brass-300" href="/slides.html">
+            10-slide talk
+          </a>
         </p>
       </div>
       <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] text-zinc-500">

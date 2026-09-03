@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DDOG alternative data — 10 slides</title>
+    <style>
+      :root {
+        --bg: #0b0c0f;
+        --card: #14171d;
+        --line: #2a2f3a;
+        --text: #e8eaef;
+        --muted: #8b909c;
+        --brass: #c4a574;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; background: var(--bg); color: var(--text); font-family: "IBM Plex Sans", Geist, ui-sans-serif, system-ui, sans-serif; }
+      .deck { max-width: 960px; margin: 0 auto; padding: 24px 20px 80px; }
+      .kicker { font-family: ui-monospace, "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass); }
+      h1 { font-size: 1.85rem; font-weight: 600; margin: 8px 0 12px; }
+      h2 { font-size: 1.35rem; font-weight: 600; margin: 0 0 12px; }
+      p, li { color: #c9cdd6; line-height: 1.55; font-size: 15px; }
+      .muted { color: var(--muted); font-size: 13px; }
+      .slide {
+        min-height: 88vh;
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: 10px;
+        padding: 36px 40px;
+        margin: 0 0 18px;
+        page-break-after: always;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0; }
+      .stat { border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+      .stat b { display: block; font-size: 1.6rem; font-family: ui-monospace, monospace; font-weight: 500; color: #fff; }
+      .stat span { font-size: 12px; color: var(--muted); }
+      table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+      th { color: var(--muted); font-weight: 500; font-size: 12px; }
+      .nav { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 12px 0; display: flex; gap: 10px; align-items: center; font-size: 13px; color: var(--muted); }
+      .nav a { color: var(--brass); }
+      @media print {
+        .nav { display: none; }
+        .slide { min-height: auto; break-after: page; margin: 0; border: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="deck">
+      <div class="nav">
+        <span class="kicker">10 slides · 15 min</span>
+        <a href="/">Dashboard</a>
+        <span>Arrow keys to move · print to PDF</span>
+      </div>
+
+      <section class="slide" id="s1">
+        <p class="kicker">01 · The decision</p>
+        <h1>Can an analyst see Datadog activity before the print?</h1>
+        <p>Not “can a model beat the Street?” — can we see, validate, and explain business activity earlier, with sources and uncertainty showing?</p>
+        <div class="row">
+          <div class="stat"><b>30.6%</b><span>Lag-1 ridge · 2026Q3 call</span></div>
+          <div class="stat"><b>35.6%</b><span>Last print · 2026Q2 · $1,121m</span></div>
+          <div class="stat"><b>28.7%</b><span>Company 8-K midpoint</span></div>
+        </div>
+        <p class="muted">Tracking behind last print (±1pp). Persistence still wins walk-forward RMSE. That honesty is the assignment.</p>
+      </section>
+
+      <section class="slide" id="s2">
+        <p class="kicker">02 · Why Datadog</p>
+        <h2>Usage- and subscription-based revenue, tied to cloud workloads</h2>
+        <ul>
+          <li>FY 2025 revenue $3.43bn (+28%). Majority-annual subscriptions.</li>
+          <li>Committed usage recognized ratably or as used; monthly usage and overage on top.</li>
+          <li>90% of ARR from customers with ARR ≥ $100k; NRR ~120% from existing-customer usage.</li>
+          <li>RPO $3.46bn at year-end 2025. Sells through AWS / Azure / GCP.</li>
+        </ul>
+        <p class="muted">NRR, RPO, and large-customer counts are 10-K disclosures — not a quarterly Company Facts series we nowcast.</p>
+      </section>
+
+      <section class="slide" id="s3">
+        <p class="kicker">03 · Sources</p>
+        <h2>Three ingested, one proposed</h2>
+        <table>
+          <thead><tr><th>#</th><th>Source</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>npm — <code>browser-rum</code> + <code>dd-trace</code> (one source, two packages)</td><td>Daily public API · ingested</td></tr>
+            <tr><td>2</td><td>Hyperscaler cloud XBRL (AWS / GCP / MSFT IC)</td><td>Quarterly macro control · not HF · not DDOG accounts</td></tr>
+            <tr><td>3</td><td>Wikipedia “Datadog” pageviews (New Relic placebo)</td><td>ToS-safe attention · empirically weak coincident</td></tr>
+            <tr><td>4</td><td>Hiring / skills</td><td>Not ingested — licensed vendor only</td></tr>
+          </tbody>
+        </table>
+        <p class="muted">Google Trends was not scraped. npm counts include CI — adoption proxy, not billable usage.</p>
+      </section>
+
+      <section class="slide" id="s4">
+        <p class="kicker">04 · Method</p>
+        <h2>Simple model, honest baselines</h2>
+        <ul>
+          <li>Target: SEC revenue YoY. Q4 = FY − (Q1+Q2+Q3) when needed.</li>
+          <li>Sample: 14 quarters, 2023Q1–2026Q2.</li>
+          <li>Validated call: ridge on lag-1 npm only. No same-quarter leak.</li>
+          <li>Intra-quarter stub: same calendar-day npm YoY through 1 Sep 2026 (63/92 days) — coincident, not a lead.</li>
+          <li>Baselines: persistence + company 8-K. No Street scrape. No future row in training.</li>
+        </ul>
+      </section>
+
+      <section class="slide" id="s5">
+        <p class="kicker">05 · Lead–lag</p>
+        <h2>RUM nowcasts. It does not strictly lead.</h2>
+        <div class="row">
+          <div class="stat"><b>0.86</b><span>RUM coincident</span></div>
+          <div class="stat"><b>0.69</b><span>RUM lag-1</span></div>
+          <div class="stat"><b>−0.09</b><span>Wiki coincident</span></div>
+        </div>
+        <p>AWS 0.78 coincident and 0.78 at lag 1 — cloud-spend regime, not Datadog accounts. GCP 0.95 (n=12) is AI-infra co-movement. New Relic wiki is negative, so Wikipedia is not generic observability traffic.</p>
+      </section>
+
+      <section class="slide" id="s6">
+        <p class="kicker">06 · Walk-forward</p>
+        <h2>Persistence still wins. We show that on purpose.</h2>
+        <div class="row">
+          <div class="stat"><b>2.1pp</b><span>Persistence RMSE</span></div>
+          <div class="stat"><b>3.3pp</b><span>npm lag-1 ridge</span></div>
+          <div class="stat"><b>2.6pp</b><span>npm + AWS / + stub</span></div>
+        </div>
+        <p>2026Q3 call 30.6% vs last print 35.6% — behind. Intra-quarter RUM stub +151% is package downloads, not revenue. 8-K implied YoY 28.2–29.3%. Ridge missed the 2026 acceleration (35.6% actual vs 28.6% in 2026Q2).</p>
+      </section>
+
+      <section class="slide" id="s7">
+        <p class="kicker">07 · Dashboard</p>
+        <h2>Walk the live tracker</h2>
+        <p><a href="/" style="color: var(--brass)">Open the dashboard</a> · https://ddog-earnings-tracker.vercel.app/</p>
+        <ol>
+          <li>Generated timestamp and npm through-date</li>
+          <li>Call stack: last print · lag-1 ridge · 8-K</li>
+          <li>KPI row and intra-quarter stub (labeled coincident)</li>
+          <li>Growth chart and npm + AWS chart</li>
+          <li>Call construction, lead–lag, walk-forward vs persistence</li>
+          <li>Sources and limitations</li>
+        </ol>
+        <p class="muted">Ahead / behind is ±1pp versus last reported YoY, not versus Street.</p>
+      </section>
+
+      <section class="slide" id="s8">
+        <p class="kicker">08 · What shipped</p>
+        <h2>This packet vs a production app</h2>
+        <p><strong>Built:</strong> Python collectors (SEC, XBRL, npm, Wikimedia), ridge walk-forward, intra-quarter stub, 22 tests, annotated React/Vite dashboard.</p>
+        <p><strong>Not built, not claimed:</strong> Next.js / tRPC production stack, licensed hiring ingest, Street consensus. Streamlit is a fallback. The demo is Vite.</p>
+      </section>
+
+      <section class="slide" id="s9">
+        <p class="kicker">09 · Limits</p>
+        <h2>Small sample, honest caveats</h2>
+        <ul>
+          <li>Fourteen quarters only — that is why persistence is the baseline.</li>
+          <li>npm includes CI and mirrors; it is not billable usage.</li>
+          <li>Q4 revenue is sometimes FY residual.</li>
+          <li>Wiki jumps on news; it is not in the call.</li>
+          <li>No Street vendor — company 8-K only.</li>
+        </ul>
+        <p class="muted">Next: licensed hiring, a non-Datadog npm placebo, one full earnings cycle.</p>
+      </section>
+
+      <section class="slide" id="s10">
+        <p class="kicker">10 · Close</p>
+        <h1>Start narrow. Show uncertainty.</h1>
+        <p>I would rather be wrong with a cited persistence forecast and an 8-K baseline than look precise without one.</p>
+        <div class="row">
+          <div class="stat"><b>Behind</b><span>vs 35.6% last print</span></div>
+          <div class="stat"><b>Above</b><span>vs 28.7% 8-K mid</span></div>
+          <div class="stat"><b>2.1pp</b><span>persistence wins RMSE</span></div>
+        </div>
+        <p class="muted">Report: docs/report.md · Run: ./scripts/dashboard.sh</p>
+      </section>
+    </div>
+    <script>
+      const slides = [...document.querySelectorAll(".slide")];
+      let i = 0;
+      function go(d) {
+        i = Math.max(0, Math.min(slides.length - 1, i + d));
+        slides[i].scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "PageDown") go(1);
+        if (e.key === "ArrowLeft" || e.key === "PageUp") go(-1);
+      });
+    </script>
+  </body>
+</html>
