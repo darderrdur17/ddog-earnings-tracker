@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { CallBanner } from "./components/CallBanner";
 import { CallConstruction } from "./components/CallConstruction";
 import { GrowthChart } from "./components/GrowthChart";
 import { Header } from "./components/Header";
@@ -20,11 +21,15 @@ export default function App() {
     <div className="min-h-screen bg-ink-950 text-zinc-100">
       <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6 lg:px-8">
         <Header />
+        <CallBanner />
         <KpiRow />
         <StubNowcast />
 
+        <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.16em] text-brass-500">
+          02 · Charts and refresh cadence
+        </p>
         <motion.section
-          className="mt-6 grid gap-4 lg:grid-cols-2"
+          className="mt-3 grid gap-4 lg:grid-cols-2"
           initial="hidden"
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.08, delayChildren: 0.35 } } }}
@@ -37,8 +42,11 @@ export default function App() {
           </motion.div>
         </motion.section>
 
+        <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.16em] text-brass-500">
+          03 · Ahead vs behind and validation
+        </p>
         <motion.section
-          className="mt-4 grid gap-4 lg:grid-cols-12"
+          className="mt-3 grid gap-4 lg:grid-cols-12"
           initial="hidden"
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.08, delayChildren: 0.5 } } }}

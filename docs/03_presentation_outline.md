@@ -32,7 +32,7 @@ RUM 0.86 coincident / 0.69 lag-1 — a **coincident nowcast**, weaker lead. Do n
 
 ## Slide 6 — Walk-forward + stub (1:30)
 
-Eight OOS forecasts. Persistence RMSE **2.1pp**. npm ridge **3.3pp**. npm+AWS **2.6pp**. Lag-1+stub **2.6pp** — still loses to persistence. 2026Q3 lag-1 call **30.6%** vs last print **35.6%** — **behind**. Stub through 2 Sep: RUM **+139%** package YoY (64/92 days) — coincident, not a revenue number. Management 8-K outlook **28.2–29.3%** implied YoY.
+Eight OOS forecasts. Persistence RMSE **2.1pp**. npm ridge **3.3pp**. npm+AWS **2.6pp**. Lag-1+stub **2.6pp** — still loses to persistence. 2026Q3 lag-1 call **30.6%** vs last print **35.6%** — **behind**. Stub through 3 Sep: RUM **+140%** package YoY (65/92 days) — coincident, not a revenue number. Management 8-K outlook **28.2–29.3%** implied YoY.
 
 ## Slide 7 — Live dashboard (3:00)
 

@@ -13,18 +13,18 @@ export function Header() {
   });
 
   return (
-    <header className="flex flex-col gap-3 border-b border-zinc-800/80 pb-4 sm:flex-row sm:items-end sm:justify-between">
+    <header className="flex flex-col gap-4 border-b border-zinc-800/80 pb-5 sm:flex-row sm:items-end sm:justify-between">
       <div>
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-brass-500">
-          Alternative data · research prototype
+          Alternative data · Datadog (NASDAQ: DDOG)
         </p>
-        <h1 className="mt-1 text-[1.65rem] font-semibold tracking-tight text-zinc-100">
-          DDOG Earnings Tracker
+        <h1 className="mt-1.5 text-[1.85rem] font-semibold tracking-tight text-zinc-100">
+          Earnings Tracker
         </h1>
-        <p className="mt-1 max-w-2xl text-[13px] leading-relaxed text-zinc-500">
-          Coincident nowcast plus a lag-1 ridge call: npm adoption, AWS cloud-regime
-          control (SEC XBRL), Wikipedia attention versus SEC revenue. Not billable
-          usage, not investment advice.
+        <p className="mt-2 max-w-2xl text-[13px] leading-relaxed text-zinc-400">
+          Public npm, SEC XBRL cloud controls, and Wikimedia pageviews versus
+          reported revenue. Coincident nowcast plus a lag-1 ridge call. Not
+          billable usage, not investment advice.
         </p>
         <p className="mt-2 font-mono text-[11px] text-zinc-500">
           Generated {asOfLabel}. Refresh: re-run{" "}
