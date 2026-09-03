@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "ddog-earnings-tracker",
+  "scripts": {
+    "build": "npm run build --prefix dashboard",
+    "vercel-build": "npm run build --prefix dashboard"
+  }
+}
