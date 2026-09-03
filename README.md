@@ -65,7 +65,7 @@ If `npx vercel whoami` fails, there is no deploy URL until you log in (`npx verc
 
 The modeled sample is 14 complete quarters from 2023Q1 through 2026Q2. `@datadog/browser-rum` YoY correlates 0.860 with revenue YoY in the **same** quarter (**coincident nowcast**) and 0.694 at lag 1. AWS segment YoY (SEC XBRL) correlates 0.778 coincident and 0.783 at lag 1. A two-signal npm lag-1 ridge has eight-quarter RMSE 0.033; adding lag-1 AWS or a coincident npm stub cuts that to ~0.026; naive persistence is still better (0.021). Wikipedia “Datadog” pageviews are not coincident (−0.087). Google Trends was not scraped. Hiring is not ingested.
 
-As of 2026-09-02 (64/92 days into 2026Q3): lag-1 ridge call **30.6%** revenue YoY vs last print **35.6%**. Intra-quarter RUM stub **+139%** package YoY (coincident, not a revenue forecast). Company 8-K Q3 outlook implies **~28.7%** YoY at the midpoint. Exploratory, not investment alpha.
+As of 2026-09-03 (65/92 days into 2026Q3): lag-1 ridge call **30.6%** revenue YoY vs last print **35.6%**. Intra-quarter RUM stub **+140%** package YoY (coincident, not a revenue forecast). Company 8-K Q3 outlook implies **~28.7%** YoY at the midpoint. Exploratory, not investment alpha.
 
 ## Documentation
 

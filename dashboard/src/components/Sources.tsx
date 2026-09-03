@@ -4,7 +4,10 @@ type Props = { asOf: string; npmEnd: string };
 
 export function Sources({ asOf, npmEnd }: Props) {
   return (
-    <footer className="mt-6 border-t border-zinc-800/80 pt-4 pb-8">
+    <footer className="mt-8 border-t border-zinc-800/80 pt-5 pb-10">
+      <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.16em] text-brass-500">
+        04 · Public sources and limits
+      </p>
       <div className="grid gap-4 md:grid-cols-3">
         <div>
           <h3 className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500">Freshness</h3>

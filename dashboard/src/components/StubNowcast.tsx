@@ -16,17 +16,34 @@ export function StubNowcast() {
 
   return (
     <div className="mt-4 rounded-lg border border-zinc-800/90 bg-ink-900 p-4">
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-sm font-medium text-zinc-200">
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+            High-frequency update · coincident, not a lead
+          </p>
+          <h2 className="mt-1 text-sm font-medium text-zinc-200">
             {intra.quarter} intra-quarter npm stub
           </h2>
           <p className="mt-0.5 text-[12px] text-zinc-500">
             Same-calendar-day window {intra.window_start} → {intra.window_end} vs{" "}
             {intra.prior_window_start} → {intra.prior_window_end}. Coverage{" "}
             {(intra.coverage * 100).toFixed(0)}% of the quarter ({intra.elapsed_days}/
-            {intra.quarter_days} days). Coincident nowcast — not a lead.
+            {intra.quarter_days} days).
           </p>
+        </div>
+        <div className="w-full max-w-[220px]">
+          <div className="flex justify-between font-mono text-[10px] text-zinc-500">
+            <span>Quarter elapsed</span>
+            <span>
+              {intra.elapsed_days}/{intra.quarter_days}
+            </span>
+          </div>
+          <div className="mt-1 h-1 overflow-hidden rounded-full bg-zinc-800">
+            <div
+              className="h-full bg-brass-500"
+              style={{ width: `${Math.min(100, intra.coverage * 100)}%` }}
+            />
+          </div>
         </div>
       </div>
 

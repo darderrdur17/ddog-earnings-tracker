@@ -1,7 +1,7 @@
 # DDOG Alternative Data Research
 
 **Take-home:** Alternative Data Research — Datadog (NASDAQ: DDOG)  
-**Date:** 2 September 2026  
+**Date:** 3 September 2026  
 **Scope:** Public SEC Company Facts, SEC XBRL cloud segments, npm downloads, Wikimedia pageviews. Hiring is licensed-only and was not scraped. Not investment advice.
 
 The 10-slide file is a **talk script**, not a substitute deck. The scored write-up is this report.
@@ -10,7 +10,7 @@ The 10-slide file is a **talk script**, not a substitute deck. The scored write-
 
 Three sources were **ingested** (npm, hyperscaler XBRL, Wikimedia) plus one **proposed** (hiring). `@datadog/browser-rum` **nowcasts** Datadog revenue growth (0.86 coincident, 0.69 at lag 1). AWS segment YoY is a **cloud-regime control** (0.78 coincident and 0.78 at lag 1), not a Datadog account meter. Adding lag-1 AWS to the npm ridge cuts eight-quarter RMSE from **3.3pp to 2.6pp**; persistence remains best at **2.1pp**. Wikipedia “Datadog” pageviews are not coincident (−0.09).
 
-**Call (validated lag-1 ridge, npm through 2026Q2):** **30.6%** revenue YoY for **2026Q3** vs last print **35.6%** — **tracking behind**. **Intra-quarter stub (through 2026-09-02, 64/92 days):** RUM downloads **+139%** YoY vs the same Jul 1–Sep 2 window in 2025; `dd-trace` **+138%**. That is a **coincident** package-download update, not a revenue forecast and not a lead. Company 8-K outlook for Q3 2026 is **$1.135–1.145bn** (**28.2–29.3%** implied YoY vs 2025Q3). Ridge sits between last print and management guidance.
+**Call (validated lag-1 ridge, npm through 2026Q2):** **30.6%** revenue YoY for **2026Q3** vs last print **35.6%** — **tracking behind**. **Intra-quarter stub (through 2026-09-03, 65/92 days):** RUM downloads **+140%** YoY vs the same Jul 1–Sep 3 window in 2025; `dd-trace` **+139%**. That is a **coincident** package-download update, not a revenue forecast and not a lead. Company 8-K outlook for Q3 2026 is **$1.135–1.145bn** (**28.2–29.3%** implied YoY vs 2025Q3). Ridge sits between last print and management guidance.
 
 ## 1. Data selection and rationale
 
@@ -65,7 +65,7 @@ RUM is a **coincident nowcast** with a weaker one-quarter lead. AWS **leads as m
 
 Sign hit is 1.00 because growth stayed positive. npm+AWS and lag-1+stub both **improve** the ridge; **neither beats persistence**. Latest print: **$1,121m**, **35.6%** YoY (2026Q2). Lag-1 npm missed the 2026 acceleration (actual 35.6% vs ridge 28.6% in 2026Q2).
 
-**Intra-quarter stub (2026Q3 as of 2026-09-02).** Coverage **70%** (64/92 days). RUM stub YoY **+139%** vs last full-quarter RUM **+111%** (still accelerating at the package layer). `dd-trace` stub **+138%** vs last full **+98%**. Backtest: RUM stub vs eventual revenue YoY corr **0.87** (n=14) — **coincident**, similar to full-quarter RUM 0.86; it does **not** lead earnings. Stub npm YoY is not on a revenue scale; do not read +139% as a 139% revenue call.
+**Intra-quarter stub (2026Q3 as of 2026-09-03).** Coverage **71%** (65/92 days). RUM stub YoY **+140%** vs last full-quarter RUM **+111%** (still accelerating at the package layer). `dd-trace` stub **+139%** vs last full **+98%**. Backtest: RUM stub vs eventual revenue YoY corr **0.88** (n=14) — **coincident**, similar to full-quarter RUM 0.86; it does **not** lead earnings. Stub npm YoY is not on a revenue scale; do not read +140% as a 140% revenue call.
 
 **Baselines for 2026Q3 revenue YoY.** Persistence / last print **35.6%**. Lag-1 ridge **30.6%**. Management guidance midpoint **28.7%** ($1.140bn / 2025Q3 $886m). Tracker is **behind** last print and **above** the company outlook midpoint.
 
