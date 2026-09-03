@@ -42,7 +42,7 @@ Interview demo: open `/slides.html` on the same origin for the 10-slide deck.
 ./scripts/package_submission.sh
 ```
 
-Writes `ddog_takehome_submission.zip` — excludes `.venv`, `node_modules`, `.git`, caches, and build artifacts.
+Writes `ddog_takehome_submission.zip` at the repo root. Open **`SUBMISSION.md`** inside the zip first — it maps each assignment deliverable to the right file.
 
 ## Live demo
 
