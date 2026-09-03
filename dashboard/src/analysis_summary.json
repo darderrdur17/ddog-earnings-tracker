@@ -2,7 +2,7 @@
   "as_of_utc": "2026-09-03T04:03:56.637380+00:00",
   "generated_at_utc": "2026-09-03T04:03:56.637380+00:00",
   "refresh_instructions": "Re-run `python src/analyze_ddog.py` then `npm --prefix dashboard run build` (or `npm run dev`).",
-  "npm_end": "2026-09-03",
+  "npm_end": "2026-09-01",
   "sample_quarters": 14,
   "joined_complete_quarters": 14,
   "analysis_start_quarter": "2023Q1",
@@ -469,46 +469,46 @@
   },
   "intra_quarter": {
     "quarter": "2026Q3",
-    "as_of": "2026-09-03",
-    "coverage": 0.7065217391304348,
-    "elapsed_days": 65,
+    "as_of": "2026-09-01",
+    "coverage": 0.6847826086956522,
+    "elapsed_days": 63,
     "quarter_days": 92,
     "window_start": "2026-07-01",
-    "window_end": "2026-09-03",
+    "window_end": "2026-09-01",
     "prior_window_start": "2025-07-01",
-    "prior_window_end": "2025-09-03",
-    "rum_stub_yoy": 1.3964708387754672,
-    "dd_trace_stub_yoy": 1.389716083188802,
-    "rum_n_days": 65,
-    "dd_trace_n_days": 65,
+    "prior_window_end": "2025-09-01",
+    "rum_stub_yoy": 1.5062358984234328,
+    "dd_trace_stub_yoy": 1.4952326381728116,
+    "rum_n_days": 63,
+    "dd_trace_n_days": 63,
     "last_print_revenue_yoy": 0.3564444336929702,
     "lag1_ridge_call": 0.3058101344004549,
     "lag1_ridge_quarter": "2026Q3",
     "last_full_quarter_rum_yoy": 1.113632248492956,
     "last_full_quarter_dd_trace_yoy": 0.9793942140104006,
     "compare": {
-      "rum_stub_yoy_vs_last_full_quarter_rum_yoy": 0.28283859028251124,
+      "rum_stub_yoy_vs_last_full_quarter_rum_yoy": 0.3926036499304768,
       "ridge_lag1_minus_last_print": -0.050634299292515283,
-      "rum_stub_minus_ridge_lag1": 1.0906607043750123,
+      "rum_stub_minus_ridge_lag1": 1.2004257640229778,
       "interpretation": "Do not treat npm stub YoY as a revenue YoY forecast \u2014 scales differ. Use it as a coincident check on whether package downloads are still accelerating versus the last completed quarter."
     },
     "backtest": {
       "method": "Same day-of-quarter offset as as_of, mapped onto each completed analysis quarter. Coincident vs that quarter's revenue YoY. Walk-forward adds stub features known as of the stub date to lag-1 npm.",
-      "rum_stub_vs_revenue_yoy_corr": 0.8836555710915469,
+      "rum_stub_vs_revenue_yoy_corr": 0.8607479747413224,
       "rum_stub_n": 14,
-      "dd_trace_stub_vs_revenue_yoy_corr": 0.5038724701969812,
+      "dd_trace_stub_vs_revenue_yoy_corr": 0.5025000926753153,
       "dd_trace_stub_n": 14,
       "walk_forward_lag1_plus_stub": {
         "n_test": 8,
-        "rmse": 0.025603035161539306,
-        "mape": 0.0705668757372189,
+        "rmse": 0.02644917484064074,
+        "mape": 0.07233695576607149,
         "directional_hit_rate": 1.0,
-        "directional_change_hit_rate": 0.25
+        "directional_change_hit_rate": 0.125
       },
       "walk_forward_persistence": {
         "n_test": 8,
-        "rmse": 0.02111230668069576,
-        "mape": 0.05432474557725893,
+        "rmse": 0.021112306680695782,
+        "mape": 0.054324745577258984,
         "directional_hit_rate": 1.0,
         "directional_change_hit_rate": 0.0
       },
@@ -516,86 +516,86 @@
       "rows": [
         {
           "quarter": "2023Q1",
-          "rum_stub_yoy": 0.7965556907075229,
-          "dd_trace_stub_yoy": 0.5351006576106621,
-          "revenue_yoy": 0.32692614935404785
+          "rum_stub_yoy": 0.7593639319599053,
+          "dd_trace_stub_yoy": 0.5053274634076361,
+          "revenue_yoy": 0.3269261493540478
         },
         {
           "quarter": "2023Q2",
-          "rum_stub_yoy": 0.45369475829877604,
-          "dd_trace_stub_yoy": 0.5077166262555399,
+          "rum_stub_yoy": 0.47661478330184437,
+          "dd_trace_stub_yoy": 0.5316701358537252,
           "revenue_yoy": 0.2544012133806737
         },
         {
           "quarter": "2023Q3",
-          "rum_stub_yoy": 0.40944960991897483,
-          "dd_trace_stub_yoy": 0.6377687764296791,
+          "rum_stub_yoy": 0.43330186339253385,
+          "dd_trace_stub_yoy": 0.6594690869978952,
           "revenue_yoy": 0.2542831813402424
         },
         {
           "quarter": "2023Q4",
-          "rum_stub_yoy": 0.14624941593206997,
-          "dd_trace_stub_yoy": 0.19793687365269008,
+          "rum_stub_yoy": 0.12564761528987023,
+          "dd_trace_stub_yoy": 0.17716131344750163,
           "revenue_yoy": 0.2561786454594066
         },
         {
           "quarter": "2024Q1",
-          "rum_stub_yoy": 0.16324853524223015,
-          "dd_trace_stub_yoy": 0.14480552501955035,
-          "revenue_yoy": 0.26891267432542953
+          "rum_stub_yoy": 0.13943969958945357,
+          "dd_trace_stub_yoy": 0.12520123635109215,
+          "revenue_yoy": 0.2689126743254295
         },
         {
           "quarter": "2024Q2",
-          "rum_stub_yoy": 0.1397198665696604,
-          "dd_trace_stub_yoy": 0.1434504883209058,
-          "revenue_yoy": 0.26659404074902837
+          "rum_stub_yoy": 0.09667188811004812,
+          "dd_trace_stub_yoy": 0.10050528433385719,
+          "revenue_yoy": 0.2665940407490283
         },
         {
           "quarter": "2024Q3",
-          "rum_stub_yoy": 0.13965627392584246,
-          "dd_trace_stub_yoy": 0.0714939674100652,
+          "rum_stub_yoy": 0.1050131712190916,
+          "dd_trace_stub_yoy": 0.04100080211546886,
           "revenue_yoy": 0.2602203325443442
         },
         {
           "quarter": "2024Q4",
-          "rum_stub_yoy": 0.3591932820076216,
-          "dd_trace_stub_yoy": 0.5205020005908703,
-          "revenue_yoy": 0.25112906152643344
+          "rum_stub_yoy": 0.3244095454822442,
+          "dd_trace_stub_yoy": 0.487404293217762,
+          "revenue_yoy": 0.2511290615264334
         },
         {
           "quarter": "2025Q1",
-          "rum_stub_yoy": 0.3172818412881169,
-          "dd_trace_stub_yoy": 0.5766479277967367,
-          "revenue_yoy": 0.24588836373809198
+          "rum_stub_yoy": 0.3155864514331004,
+          "dd_trace_stub_yoy": 0.5719784971774051,
+          "revenue_yoy": 0.2458883637380919
         },
         {
           "quarter": "2025Q2",
-          "rum_stub_yoy": 0.48975086673383506,
-          "dd_trace_stub_yoy": 0.5416235707574111,
+          "rum_stub_yoy": 0.48501998729336937,
+          "dd_trace_stub_yoy": 0.538705072322647,
           "revenue_yoy": 0.2812442369889614
         },
         {
           "quarter": "2025Q3",
-          "rum_stub_yoy": 0.5812925902819761,
-          "dd_trace_stub_yoy": 0.4401867033973019,
+          "rum_stub_yoy": 0.5669781867175885,
+          "dd_trace_stub_yoy": 0.429883009811701,
           "revenue_yoy": 0.2835224110745258
         },
         {
           "quarter": "2025Q4",
-          "rum_stub_yoy": 0.5637318788087138,
-          "dd_trace_stub_yoy": 0.3423772576263153,
+          "rum_stub_yoy": 0.5654134371110506,
+          "dd_trace_stub_yoy": 0.342544359877891,
           "revenue_yoy": 0.2920687462977498
         },
         {
           "quarter": "2026Q1",
-          "rum_stub_yoy": 0.8597311072370375,
-          "dd_trace_stub_yoy": 0.5506326136407207,
-          "revenue_yoy": 0.32154426546806336
+          "rum_stub_yoy": 0.8603737892323495,
+          "dd_trace_stub_yoy": 0.5538227421319977,
+          "revenue_yoy": 0.3215442654680633
         },
         {
           "quarter": "2026Q2",
-          "rum_stub_yoy": 1.073128828019514,
-          "dd_trace_stub_yoy": 0.9183445919543158,
+          "rum_stub_yoy": 1.0708221504866597,
+          "dd_trace_stub_yoy": 0.9642106854710901,
           "revenue_yoy": 0.3564444336929702
         }
       ]
@@ -614,7 +614,7 @@
       "implied_yoy_high": 0.2928343105805786,
       "implied_yoy_mid": 0.2871887459055542
     },
-    "framing": "Stub is a coincident high-frequency npm update (same-calendar-day window vs a year ago), not a leading indicator. Lag-1 ridge is the validated model call; the stub is not trained into that call. Backtest n is small (one stub date per completed quarter). RUM stub YoY vs eventual revenue YoY correlation is 0.88 (n=14, coincident). Walk-forward ridge using lag-1 npm plus same-quarter stub (known as of the stub date) RMSE 0.026 does not beat persistence 0.021.",
+    "framing": "Stub is a coincident high-frequency npm update (same-calendar-day window vs a year ago), not a leading indicator. Lag-1 ridge is the validated model call; the stub is not trained into that call. Backtest n is small (one stub date per completed quarter). RUM stub YoY vs eventual revenue YoY correlation is 0.86 (n=14, coincident). Walk-forward ridge using lag-1 npm plus same-quarter stub (known as of the stub date) RMSE 0.026 does not beat persistence 0.021.",
     "label_lag1": "validated lag-1 ridge (no same-quarter npm)",
     "label_stub": "coincident high-frequency stub (sample still small)"
   },

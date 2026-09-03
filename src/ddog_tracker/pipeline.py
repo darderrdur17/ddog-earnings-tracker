@@ -16,6 +16,7 @@ from .features import (
     aggregate_monthly_quarterly,
     aggregate_npm_quarterly,
     build_panel,
+    last_complete_npm_date,
     lead_lag_table,
     quarterly_yoy_frame,
     shift_by_calendar_quarters,
@@ -102,7 +103,7 @@ def run(settings: Settings | None = None) -> dict[str, Any]:
         metrics["ridge_npm_aws_wiki_lag1"] = both_metrics.get("ridge", {})
 
     estimate = latest_estimate(modeled, npm_lag, npm_yoy, settings)
-    npm_as_of = date.today()
+    npm_as_of = last_complete_npm_date(npm_dailies, fallback=date.today())
     intra = build_intra_quarter(
         npm_dailies, modeled, estimate, settings, npm_as_of, npm_lag
     )

@@ -1,8 +1,10 @@
-# DDOG Earnings Tracker: Technical Design and Delivery Plan
+# Technical design and delivery plan
+
+**Production roadmap** — not what this take-home ships.
+
+The checked-in prototype is a Python research pipeline (SEC / XBRL / npm / Wikimedia collectors, ridge walk-forward) plus an annotated React/Vite dashboard. Streamlit is an optional fallback. The stack below is the target if this workflow were productized.
 
 ## Product boundary
-
-The checked-in prototype is a Python research pipeline (SEC / XBRL / npm / Wikimedia collectors, ridge walk-forward) plus an annotated React/Vite dashboard. Streamlit is an optional fallback. The stack below is a **production target** if the workflow is productized; it is not what this take-home ships.
 
 The MVP is a ticker-level research workflow for Datadog. It ingests public time-series signals, calculates point-in-time features, runs a transparent model, and exposes an evidence-linked summary. It does not execute trades, provide personalized investment advice, or ingest private customer telemetry.
 
