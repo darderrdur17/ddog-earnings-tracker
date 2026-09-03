@@ -12,7 +12,7 @@ requirements.txt
 pytest.ini
 src/
 tests/
-scripts/
+/scripts/
 docs/
 SUBMISSION.md
 Take-Home_Assignment*.md
