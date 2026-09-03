@@ -1,6 +1,9 @@
 {
   "private": true,
   "name": "ddog-earnings-tracker",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "npm run build --prefix dashboard",
     "vercel-build": "npm run build --prefix dashboard"
