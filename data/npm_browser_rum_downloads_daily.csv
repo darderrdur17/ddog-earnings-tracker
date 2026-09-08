@@ -1888,5 +1888,10 @@ date,day,quarter,package,browser_rum_downloads
 2026-08-30,2026-08-30,2026Q3,@datadog/browser-rum,283084
 2026-08-31,2026-08-31,2026Q3,@datadog/browser-rum,1113357
 2026-09-01,2026-09-01,2026Q3,@datadog/browser-rum,1286299
-2026-09-02,2026-09-02,2026Q3,@datadog/browser-rum,0
+2026-09-02,2026-09-02,2026Q3,@datadog/browser-rum,1322671
 2026-09-03,2026-09-03,2026Q3,@datadog/browser-rum,0
+2026-09-04,2026-09-04,2026Q3,@datadog/browser-rum,1099364
+2026-09-05,2026-09-05,2026Q3,@datadog/browser-rum,264395
+2026-09-06,2026-09-06,2026Q3,@datadog/browser-rum,259897
+2026-09-07,2026-09-07,2026Q3,@datadog/browser-rum,0
+2026-09-08,2026-09-08,2026Q3,@datadog/browser-rum,0

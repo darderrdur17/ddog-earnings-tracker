@@ -1,6 +1,6 @@
 # Alternative data research: Datadog (NASDAQ: DDOG)
 
-**Take-home assignment** · 3 September 2026  
+**Take-home assignment** · 8 September 2026  
 Public SEC, npm, and Wikimedia data only. Hiring was not scraped. Research tracker — not investment advice.
 
 The dashboard is the working prototype. The slide deck is the talk track. This note is the scored write-up.
@@ -13,7 +13,7 @@ Datadog’s 2025 10-K describes the engine: mostly annual subscriptions, committ
 
 Three sources were ingested (npm, hyperscaler XBRL, Wikimedia) and one was proposed only (hiring). `@datadog/browser-rum` **nowcasts** reported growth: 0.86 coincident, 0.69 one quarter ahead. AWS segment YoY is a **cloud-regime control** (0.78 coincident and 0.78 at lag 1), not a Datadog meter. Adding lag-1 AWS to a simple npm ridge cuts eight-quarter RMSE from 3.3pp to 2.6pp. Persistence is still better, at 2.1pp. Wikipedia “Datadog” pageviews do not nowcast (−0.09 coincident).
 
-**2026Q3 call (lag-1 ridge, signals through 2026Q2): 30.6% revenue YoY**, versus last print **35.6%** — tracking behind. Intra-quarter npm through **1 September 2026** (63 of 92 days) is still accelerating at the *package* layer (RUM **+151%** YoY vs the same Jul 1–Sep 1 window in 2025). That is a coincident download update, not a 151% revenue forecast. Company 8-K outlook is $1.135–1.145bn, about **28.2–29.3%** implied YoY. The ridge sits between last print and management’s midpoint.
+**2026Q3 call (lag-1 ridge, signals through 2026Q2): 30.6% revenue YoY**, versus last print **35.6%** — tracking behind. Intra-quarter npm through **6 September 2026** (68 of 92 days) is still accelerating at the *package* layer (RUM **+143%** YoY vs the same Jul 1–Sep 6 window in 2025). That is a coincident download update, not a 143% revenue forecast. Company 8-K outlook is $1.135–1.145bn, about **28.2–29.3%** implied YoY. The ridge sits between last print and management’s midpoint.
 
 I would rather show that persistence wins than dress a weaker model as alpha.
 
@@ -35,7 +35,7 @@ For each source: what it measures, why it should map to Datadog’s model, updat
 
 **Features.** npm is pulled in 180-day chunks, summed to the calendar quarter, YoY only if coverage ≥ 85%. Intra-quarter **stub**: downloads from quarter start through `as_of`, versus the same day-of-quarter window a year earlier. Trailing npm days that still read as 0 (unsettled API) are dropped from `as_of` so we do not compare an incomplete current window to a complete prior-year window. Cloud uses duration XBRL (~80–102 days); year-to-date contexts are dropped. Wiki needs three months in the quarter.
 
-**Sample.** 2023Q1–2026Q2, 14 complete YoY quarters. Stub backtests reuse the 1 September 2026 day-of-quarter offset on each completed quarter.
+**Sample.** 2023Q1–2026Q2, 14 complete YoY quarters. Stub backtests reuse the 6 September 2026 day-of-quarter offset on each completed quarter.
 
 **Lead–lag.** Pearson correlation of calendar-lagged signal YoY with revenue YoY. Lag 0 is a coincident nowcast. Lag 1 is the validated call. A row shift across a missing quarter is not a lag.
 
@@ -62,12 +62,12 @@ RUM is a coincident nowcast with a weaker one-quarter lead. I would not call lag
 |---|---|---|---|
 | Ridge (npm lag-1) | 0.033 | 0.089 | 0.13 |
 | Ridge (npm + AWS lag-1) | 0.026 | 0.082 | 0.13 |
-| Ridge (npm lag-1 + coincident stub) | 0.026 | 0.071 | 0.25 |
+| Ridge (npm lag-1 + coincident stub) | 0.026 | 0.072 | 0.13 |
 | Persistence | **0.021** | **0.054** | 0.00 |
 
 Sign-of-growth hit is 1.00 because every print in the window was still positive — that is not timing skill. AWS and the stub both *help* the ridge. Neither beats “last quarter’s growth again.” Latest print: **$1,121m**, **35.6%** YoY (2026Q2). Lag-1 npm missed the 2026 acceleration (actual 35.6% versus ridge 28.6% in 2026Q2). That miss is the story, not a footnote.
 
-**Intra-quarter stub (2026Q3 as of 2026-09-01).** Coverage 68% (63/92 days). RUM stub YoY **+151%** versus last full-quarter RUM **+111%**; `dd-trace` stub **+149%** versus **+98%**. Package downloads are still running hot versus last quarter. Backtest: RUM stub versus *eventual* revenue YoY corr **0.86** (n=14) — coincident, in line with full-quarter RUM, **not a lead**. Do not read +151% as a revenue call; the scales are different.
+**Intra-quarter stub (2026Q3 as of 2026-09-06).** Coverage 74% (68/92 days). RUM stub YoY **+143%** versus last full-quarter RUM **+111%**; `dd-trace` stub **+143%** versus **+98%**. Package downloads are still running hot versus last quarter. Backtest: RUM stub versus *eventual* revenue YoY corr **0.87** (n=14) — coincident, in line with full-quarter RUM, **not a lead**. Do not read +143% as a revenue call; the scales are different.
 
 **2026Q3 stack.** Persistence 35.6%. Lag-1 ridge **30.6%** (behind by 5.1pp under a ±1pp rule versus last print, not versus Street). 8-K midpoint **28.7%**. Tracker is behind the print and a little above management’s midpoint.
 

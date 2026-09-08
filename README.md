@@ -24,7 +24,7 @@ Zip a packet (no `.venv` / `node_modules` / `.git`):
 ./scripts/package_submission.sh
 ```
 
-That writes `ddog_takehome_submission.zip` at the repo root.
+That writes `ddog_takehome_submission_2026-09-08.zip` (and `ddog_takehome_submission.zip`) at the repo root.
 
 ## Live demo
 
@@ -36,7 +36,7 @@ Optional Python UI: `./scripts/streamlit.sh`. Demo Vite in the interview.
 
 Fourteen quarters, 2023Q1–2026Q2. `@datadog/browser-rum` YoY correlates 0.86 with revenue YoY in the same quarter (coincident nowcast) and 0.69 at lag 1. AWS segment YoY correlates 0.78 coincident and 0.78 at lag 1. npm lag-1 ridge RMSE 3.3pp; +AWS or +stub ~2.6pp; persistence **2.1pp**. Wikipedia is not coincident (−0.09).
 
-As of 2026-09-01 (63/92 days into 2026Q3): lag-1 call **30.6%** YoY vs last print **35.6%** (behind). Intra-quarter RUM stub **+151%** package YoY — coincident, not a revenue forecast. Company 8-K midpoint ~**28.7%**. Exploratory, not investment advice.
+As of 2026-09-06 (68/92 days into 2026Q3): lag-1 call **30.6%** YoY vs last print **35.6%** (behind). Intra-quarter RUM stub **+143%** package YoY — coincident, not a revenue forecast. Company 8-K midpoint ~**28.7%**. Exploratory, not investment advice.
 
 ## Legal
 

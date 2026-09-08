@@ -7,6 +7,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
+OUT_DATED="${ROOT}/ddog_takehome_submission_2026-09-08.zip"
 OUT="${ROOT}/ddog_takehome_submission.zip"
 PKG="ddog_takehome_submission"
 STAGE="$(mktemp -d "${TMPDIR:-/tmp}/ddog_pkg.XXXXXX")"
@@ -38,6 +39,7 @@ rsync -a \
   --exclude '.git' \
   --exclude '.venv' \
   --exclude '.cursor' \
+  --exclude 'canvases' \
   --exclude '.vercel' \
   --exclude '.pytest_cache' \
   --exclude '**/.DS_Store' \
@@ -47,6 +49,7 @@ rsync -a \
   --exclude 'data/cache' \
   --exclude 'outputs/*.log' \
   --exclude 'ddog_takehome_submission.zip' \
+  --exclude 'ddog_takehome_submission_*.zip' \
   --exclude "${STAGE}" \
   --exclude '.Rhistory' \
   --exclude '**/*.tsbuildinfo' \
@@ -59,18 +62,20 @@ cp "${ROOT}/docs/report.docs" "${DEST}/report.docs"
 cp "${ROOT}/docs/slides.html" "${DEST}/slides.html"
 
 echo "==> Zip"
-rm -f "${OUT}"
+rm -f "${OUT}" "${OUT_DATED}"
 (
   cd "${STAGE}"
-  zip -r "${OUT}" "${PKG}" \
+  zip -r "${OUT_DATED}" "${PKG}" \
     -x "**/.DS_Store" \
     -x "**/__pycache__/*" \
     -x "**/*.pyc"
 )
+cp "${OUT_DATED}" "${OUT}"
 
 echo ""
-echo "Wrote ${OUT}"
-ls -lh "${OUT}"
+echo "Wrote ${OUT_DATED}"
+echo "Also copied to ${OUT}"
+ls -lh "${OUT_DATED}"
 echo ""
 echo "Deliverables inside ${PKG}/:"
 echo "  report.md / report.docs     — written report"

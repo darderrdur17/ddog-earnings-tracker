@@ -20,7 +20,7 @@ Each `.docs` file is a Word-compatible document (Office Open XML). Rename to `.d
 - Last print: **$1,121m / 35.6% YoY** (2026Q2)
 - Lag-1 ridge call: **30.6%** — tracking **behind** last print (±1pp rule)
 - Company 8-K midpoint: **~28.7%** implied YoY
-- Intra-quarter RUM stub: **+151%** package YoY through **2026-09-01** (63/92 days) — coincident, not a revenue forecast
+- Intra-quarter RUM stub: **+143%** package YoY through **2026-09-06** (68/92 days) — coincident, not a revenue forecast
 - Walk-forward RMSE: persistence **2.1pp**, npm ridge **3.3pp**, npm+AWS **2.6pp**
 
 ## Quick run

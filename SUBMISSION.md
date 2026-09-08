@@ -1,5 +1,7 @@
 # Datadog alternative data take-home — submission packet
 
+**As of 8 September 2026.** Public data refreshed through the latest settled npm day (**2026-09-06**). Lag-1 ridge still uses signals through 2026Q2.
+
 **Candidate deliverables mapped to assignment requirements.**
 
 ## 1. Written report (max 5 pages)

@@ -23,7 +23,7 @@ Can an analyst see Datadog activity before the print — with sources and uncert
 
 ## Slide 4 — Method (1:15)
 
-Target: SEC revenue YoY; Q4 = FY − (Q1–Q3). Sample: 14 quarters, 2023Q1–2026Q2. Calendar lead–lag. Ridge on lag-1 npm = **validated call**. Intra-quarter same-calendar-day npm stub = **coincident nowcast** (through 1 Sep, 63/92 days). Ablations: +AWS, +stub. Baselines: persistence + company 8-K. No Street scrape. No future row in training.
+Target: SEC revenue YoY; Q4 = FY − (Q1–Q3). Sample: 14 quarters, 2023Q1–2026Q2. Calendar lead–lag. Ridge on lag-1 npm = **validated call**. Intra-quarter same-calendar-day npm stub = **coincident nowcast** (through 6 Sep, 68/92 days). Ablations: +AWS, +stub. Baselines: persistence + company 8-K. No Street scrape. No future row in training.
 
 ## Slide 5 — Lead–lag is a nowcast (1:30)
 
@@ -31,7 +31,7 @@ RUM 0.86 coincident / 0.69 lag-1 — coincident nowcast, weaker lead. Do not cal
 
 ## Slide 6 — Walk-forward + stub (1:30)
 
-Eight OOS forecasts. Persistence RMSE **2.1pp**. npm ridge **3.3pp**. npm+AWS **2.6pp**. Lag-1+stub **2.6pp** — still loses to persistence. 2026Q3 call **30.6%** vs last print **35.6%** — behind. Stub: RUM **+151%** package YoY (63/92 days) — not a revenue number. 8-K implied YoY **28.2–29.3%**.
+Eight OOS forecasts. Persistence RMSE **2.1pp**. npm ridge **3.3pp**. npm+AWS **2.6pp**. Lag-1+stub **2.6pp** — still loses to persistence. 2026Q3 call **30.6%** vs last print **35.6%** — behind. Stub: RUM **+143%** package YoY (68/92 days) — not a revenue number. 8-K implied YoY **28.2–29.3%**.
 
 ## Slide 7 — Live dashboard (3:00)
 
